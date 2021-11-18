@@ -13,29 +13,42 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-const forwardUrl = "http://localhost:8080";
-const wsForwardUrl = "ws://localhost:8080";
+// const forwardUrl = "http://localhost:8080";
+// const wsForwardUrl = "ws://localhost:8080";
+
+const forwardUrl = "https://tb.aks.chilunyc.cn";
+const wsForwardUrl = "wss://tb.aks.chilunyc.cn";
 const ruleNodeUiforwardUrl = forwardUrl;
 
 const PROXY_CONFIG = {
   "/api": {
     "target": forwardUrl,
+    "protocol": "https:",
+    "changeOrigin": true,
     "secure": false,
   },
   "/static/rulenode": {
     "target": ruleNodeUiforwardUrl,
+    "protocol": "https:",
+    "changeOrigin": true,
     "secure": false,
   },
   "/static/widgets": {
     "target": forwardUrl,
+    "protocol": "https:",
+    "changeOrigin": true,
     "secure": false,
   },
   "/oauth2": {
     "target": forwardUrl,
+    "protocol": "https:",
+    "changeOrigin": true,
     "secure": false,
   },
   "/login/oauth2": {
     "target": forwardUrl,
+    "protocol": "https:",
+    "changeOrigin": true,
     "secure": false,
   },
   "/api/ws": {

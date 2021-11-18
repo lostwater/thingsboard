@@ -50,7 +50,7 @@ export class HomeComponent extends PageComponent implements AfterViewInit, OnIni
   sidenavMode: 'over' | 'push' | 'side' = 'side';
   sidenavOpened = true;
 
-  logo = 'assets/logo_title_white.svg';
+  logo = 'assets/logo_title_white.png';
 
   @ViewChild('sidenav')
   sidenav: MatSidenav;
@@ -68,8 +68,8 @@ export class HomeComponent extends PageComponent implements AfterViewInit, OnIni
   searchText = '';
 
   constructor(protected store: Store<AppState>,
-              @Inject(WINDOW) private window: Window,
-              public breakpointObserver: BreakpointObserver) {
+    @Inject(WINDOW) private window: Window,
+    public breakpointObserver: BreakpointObserver) {
     super(store);
   }
 
@@ -88,14 +88,14 @@ export class HomeComponent extends PageComponent implements AfterViewInit, OnIni
     this.breakpointObserver
       .observe(MediaBreakpoints['gt-sm'])
       .subscribe((state: BreakpointState) => {
-          if (state.matches) {
-            this.sidenavMode = 'side';
-            this.sidenavOpened = true;
-          } else {
-            this.sidenavMode = 'over';
-            this.sidenavOpened = false;
-          }
+        if (state.matches) {
+          this.sidenavMode = 'side';
+          this.sidenavOpened = true;
+        } else {
+          this.sidenavMode = 'over';
+          this.sidenavOpened = false;
         }
+      }
       );
   }
 
